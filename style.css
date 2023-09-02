@@ -1,0 +1,339 @@
+body {
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    background-color:black;
+    background-size: cover;
+  }
+  
+  .logo-img {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 80px;
+    background-color: #306317;
+    
+  }
+
+  /*button{
+    position:absolute;
+    top:50%;
+    transform:translate(-50%,50%);
+    background-color:#306317;
+    color:white;
+  }*/
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto 20px  auto;
+    /*width: 90%;*/
+    max-width:100%;
+   
+  }
+  header > h1 {
+    color: rgb(48, 107, 48);
+    text-align: center;
+    font-weight: 1000;
+    font-size: 3em;
+    margin-bottom: 30px;
+    margin: 0.3em 0;
+    /*overflow: hidden; /* Para esconder as letras enquanto estão atrasadas */
+  }
+  h1.animation{
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+  }
+  /* Adicione uma classe para cada letra (h1-letter-1, h1-letter-2, etc.) */
+  h1.animation span {
+    display: inline-block;
+    opacity: 0; /* Inicialmente, esconda as letras */
+    animation: arriveAnimation 0.5s linear forwards;
+    margin-top: 50px;
+   
+  }
+  
+  @keyframes arriveAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(1em); /* Movimente a letra para baixo */
+      color:rgb(9, 255, 0); /* Cor inicial */
+    }
+    50%{
+      opacity: 1;
+      transform: translateY(0);
+      color: rgb(127, 47, 255); /* Cor inicial */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(-1em); 
+      color:chartreuse; /* Cor inicial *//* Traga a letra de volta à sua posição original */
+    }
+  }
+  
+  h1.animation span:nth-child(1) {
+    animation-delay: 0.5s; /* Atraso para a primeira letra 'R' */
+  }
+  h1.animation span:nth-child(2) {
+    animation-delay: 0.1s; /* Atraso para a segunda letra 'i' */
+  }
+  h1.animation span:nth-child(3) {
+    animation-delay: 1.5s; /* Atraso para a terceira letra 'c' */
+  }
+  /* Continue adicionando mais regras para cada letra, se necessário */
+  h1.animation span:nth-child(4) {
+    animation-delay: 2s; /* Atraso para a primeira letra 'R' */
+  }
+  h1.animation span:nth-child(5) {
+    animation-delay: 2.5s; /* Atraso para a segunda letra 'i' */
+  }
+  h1.animation span:nth-child(6) {
+    animation-delay: 3s; /* Atraso para a terceira letra 'c' */
+  }
+  h1.animation span:nth-child(7) {
+    animation-delay: 3.5s; /* Atraso para a primeira letra 'R' */
+  }
+  h1.animation span:nth-child(8) {
+    animation-delay: 4s; /* Atraso para a segunda letra 'i' */
+  }
+  h1.animation span:nth-child(9) {
+    animation-delay: 4.5s; /* Atraso para a terceira letra 'c' */
+  }
+  h1.animation span:nth-child(10) {
+    animation-delay: 5s; /* Atraso para a primeira letra 'R' */
+  }
+  h1.animation span:nth-child(11) {
+    animation-delay: 5.5s; /* Atraso para a segunda letra 'i' */
+  }
+  h1.animation span:nth-child(12) {
+    animation-delay: 6s; /* Atraso para a terceira letra 'c' */
+  }  
+  h1.animation span:nth-child(13) {
+    animation-delay: 6.5s; /* Atraso para a terceira letra 'c' */
+  }
+  h1.animation span:nth-child(14) {
+    animation-delay: 7s; /* Atraso para a terceira letra 'c' */
+  }
+  h1.animation span:nth-child(15) {
+    animation-delay: 7.5s; /* Atraso para a terceira letra 'c' */
+  }
+  
+  
+  main {
+   
+    position:relative;
+    padding-bottom: 30vh;
+    background-color: black;
+    background-image: url(images/FUNDO_2.jpg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 250%;
+    animation: fadeIn 2s ease;
+    animation: backgroundTransition 15s linear infinite;
+  }
+  
+  #cards {
+    position: relative;
+    z-index:2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+  }
+  
+  .searchField {
+    display: flex;
+    border: solid 1px lightgray;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: white;
+    width: 50%;
+    transition: 0.2s;
+  }
+  .searchField:focus-within {
+    box-shadow: 0px 0px 3px 0px rgb(48 99 23), 0px 0px 9px 0px rgb(48 99 23);
+  }
+  .searchField input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    font-size: 14pt;
+    color: #306317;
+  }
+  .searchField input::placeholder {
+    color: lightgray;
+  }
+  .searchField svg {
+    transition: 0.2s;
+    fill: lightgray;
+  }
+  .searchField input:focus +svg {
+    fill: #306317;
+  }
+  
+  .card {
+    position: relative;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 40%;
+    background-color: #354338f2;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    --animate-duration: 0.5s; /* Animate.css timing */
+    transition: transform 0.5s;
+  }
+  .card:hover {
+    z-index: 1;
+    transform: scale(1.025);
+  }
+  .card > img {
+    width: 190px;
+  }
+  .cardData {
+    display: flex;
+    font-size: 10pt;
+    font-weight: 700;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    gap: 15px;
+    padding: 10px;
+  }
+  .cardTitle > * {
+    padding: 0;
+    margin: 0;
+  }
+  .cardTitle > h2 {
+    font-weight: bolder;
+  }
+  .cardTitle > div > span {
+    vertical-align: middle;
+  }
+  .cardTitle > div > .statusIcon {
+    font-size: 1.5em;
+  }
+  .cardInfo > * {
+    padding: 0;
+    margin: 0;
+  }
+  .cardInfo > h4 {
+    color: #858585;
+    margin-bottom: 5px;
+  }
+  
+  #pagination {
+    color: white;
+    padding: 10px;
+    background-color: #354338f2;
+    display: inline-block;
+    border-radius: 5px;
+    margin: 10px;
+    /*visibility: hidden;*/
+  }
+  #pagination a {
+    color: #98b19d;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  footer {
+    background-color: #33503a;
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    padding: 1vh 0;
+  }
+  footer > .counters {
+    margin: 40px 0;
+  }
+  footer > .counters > span {
+    display: inline-block;
+    margin: 5px 10px;
+  }
+  footer > .developer {
+    margin-top: 100px;
+  }
+  footer > .developer > em {
+    font-style: normal;
+    color: white;
+  }
+  
+  /* utils */
+  
+  .filter-green{
+    fill: red;
+    /* filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%); */
+  }
+  
+  /* media sizes */
+  
+  @media (max-width: 1080px) {
+  
+    .card {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .cardData {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+      background-color: #405344;
+      flex-grow: 1;
+    }
+    
+  }
+  
+  @media (max-width: 580px) {
+  
+    .card img {
+      width: 100%
+    }
+    .cardData {
+      display: none;
+    }
+    
+    footer > .counters > span {
+      margin: 5px 10px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .searchField input {
+      width: 100%;
+    }  
+    .searchField img {
+      display: none;
+    }  
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes backgroundTransition {
+    0% {
+      background-image: url(images/FUNDO_2.jpg);
+    }
+    25% {
+      background-image: url(images/FUNDO_3.jpg);
+    }
+    50% {
+      background-image: url(images/FUNDO.jpg);
+    }
+    75% {
+      background-image: url(images/background.jpg);
+    }
+    100% {
+      background-image: url(images/FUNDO_2.jpg);
+    }
+  }
